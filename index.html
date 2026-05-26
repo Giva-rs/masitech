@@ -174,10 +174,10 @@
     /* ── FEATURES ── */
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 16px;
       width: 100%;
-      max-width: 760px;
+      max-width: 960px;
       margin-bottom: 64px;
       animation: fadeUp 0.7s 0.3s ease both;
     }
@@ -293,11 +293,15 @@
     }
 
     /* ── RESPONSIVE ── */
+    @media (max-width: 720px) {
+      .features { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 500px) {
       main { padding: 48px 16px 60px; }
       .stats { flex-direction: column; }
       .stat:not(:last-child) { border-right: none; border-bottom: 1px solid var(--border); }
       .cta-btn { padding: 18px 32px; font-size: 15px; }
+      .features { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -365,7 +369,7 @@
 
       <a
         class="cta-btn"
-        href="https://wa.me/5516996399749?text=Olá!%20Tenho%20interesse%20em%20adquirir%20o%20domínio%20masitech.com.br.%20Podemos%20conversar%3F"
+        href="https://wa.me/5516997354455?text=Olá!%20Tenho%20interesse%20em%20adquirir%20o%20domínio%20masitech.com.br.%20Podemos%20conversar%3F"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Entrar em contato via WhatsApp"
