@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>masitech.com.br — Domínio à Venda</title>
+  <meta name="description" content="O domínio masitech.com.br está disponível para venda. Adquira agora e fortaleça sua presença digital." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #050A0E;
+      --surface: #0C1419;
+      --border: #1A2830;
+      --accent: #00E5FF;
+      --accent2: #FF6B35;
+      --text: #E8F4F8;
+      --muted: #5A7A8A;
+      --glow: rgba(0, 229, 255, 0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Syne', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── BACKGROUND ── */
+    .bg-grid {
+      position: fixed; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(rgba(0,229,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,255,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .bg-orb {
+      position: fixed; border-radius: 50%;
+      filter: blur(120px); pointer-events: none; z-index: 0;
+    }
+    .bg-orb-1 {
+      width: 600px; height: 600px;
+      top: -200px; left: -150px;
+      background: radial-gradient(circle, rgba(0,229,255,0.08) 0%, transparent 70%);
+      animation: drift1 18s ease-in-out infinite;
+    }
+    .bg-orb-2 {
+      width: 500px; height: 500px;
+      bottom: -150px; right: -100px;
+      background: radial-gradient(circle, rgba(255,107,53,0.07) 0%, transparent 70%);
+      animation: drift2 22s ease-in-out infinite;
+    }
+    @keyframes drift1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(40px,60px)} }
+    @keyframes drift2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-50px,-40px)} }
+
+    /* ── LAYOUT ── */
+    main {
+      position: relative; z-index: 1;
+      max-width: 900px; margin: 0 auto;
+      padding: 60px 24px 80px;
+      display: flex; flex-direction: column; align-items: center;
+      min-height: 100vh; justify-content: center;
+      gap: 0;
+    }
+
+    /* ── BADGE ── */
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid var(--border);
+      background: rgba(0,229,255,0.04);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      animation: fadeUp 0.6s ease both;
+    }
+    .badge-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 1.8s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.7)} }
+
+    /* ── DOMAIN DISPLAY ── */
+    .domain-wrap {
+      text-align: center;
+      margin-bottom: 48px;
+      animation: fadeUp 0.7s 0.1s ease both;
+    }
+
+    .domain-name {
+      font-size: clamp(44px, 10vw, 96px);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #ffffff 30%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+      display: inline-block;
+    }
+
+    .domain-name::after {
+      content: '';
+      position: absolute;
+      bottom: -8px; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+
+    .tld {
+      color: var(--accent2);
+      -webkit-text-fill-color: var(--accent2);
+    }
+
+    .domain-subtitle {
+      margin-top: 24px;
+      font-size: 17px;
+      color: var(--muted);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      line-height: 1.6;
+    }
+
+    /* ── STATS ROW ── */
+    .stats {
+      display: flex; gap: 1px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 680px;
+      margin-bottom: 56px;
+      animation: fadeUp 0.7s 0.2s ease both;
+    }
+
+    .stat {
+      flex: 1;
+      padding: 24px 20px;
+      background: var(--surface);
+      text-align: center;
+      transition: background 0.3s;
+    }
+    .stat:not(:last-child) { border-right: 1px solid var(--border); }
+    .stat:hover { background: rgba(0,229,255,0.04); }
+
+    .stat-value {
+      font-family: 'DM Mono', monospace;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+    .stat-label {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 6px;
+    }
+
+    /* ── FEATURES ── */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      width: 100%;
+      max-width: 760px;
+      margin-bottom: 64px;
+      animation: fadeUp 0.7s 0.3s ease both;
+    }
+
+    .feature {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 20px;
+      background: var(--surface);
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .feature:hover {
+      border-color: rgba(0,229,255,0.35);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,229,255,0.08);
+    }
+    .feature-icon {
+      font-size: 26px;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .feature-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+      letter-spacing: 0.01em;
+    }
+    .feature-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── CTA ── */
+    .cta-wrap {
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
+      animation: fadeUp 0.7s 0.4s ease both;
+    }
+
+    .cta-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 14px;
+      padding: 20px 44px;
+      background: #25D366;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 100px;
+      font-family: 'Syne', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+      box-shadow: 0 0 0 0 rgba(37,211,102,0);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-btn::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 16px 48px rgba(37,211,102,0.35);
+      background: #20c95e;
+    }
+    .cta-btn:active { transform: scale(0.98); }
+
+    .cta-btn svg {
+      width: 22px; height: 22px; flex-shrink: 0;
+    }
+
+    .cta-note {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      width: 100%; max-width: 680px;
+      border: none; border-top: 1px solid var(--border);
+      margin: 56px 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative; z-index: 1;
+      text-align: center;
+      padding: 24px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 500px) {
+      main { padding: 48px 16px 60px; }
+      .stats { flex-direction: column; }
+      .stat:not(:last-child) { border-right: none; border-bottom: 1px solid var(--border); }
+      .cta-btn { padding: 18px 32px; font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+
+  <main>
+
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Domínio disponível para venda
+    </div>
+
+    <div class="domain-wrap">
+      <h1 class="domain-name">masitech<span class="tld">.com.br</span></h1>
+      <p class="domain-subtitle">
+        Um nome forte, tecnológico e memorável.<br>
+        Ideal para startups, empresas de TI e produtos digitais.
+      </p>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-value">6</div>
+        <div class="stat-label">letras únicas</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">.com.br</div>
+        <div class="stat-label">TLD nacional</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">100%</div>
+        <div class="stat-label">disponível</div>
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <span class="feature-icon">⚡</span>
+        <div class="feature-title">Fácil de memorizar</div>
+        <div class="feature-desc">Nome curto, fonético e sem caracteres especiais. Seus clientes vão lembrar.</div>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">🇧🇷</span>
+        <div class="feature-title">Autoridade nacional</div>
+        <div class="feature-desc">Extensão .com.br transmite credibilidade e confiança no mercado brasileiro.</div>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">🚀</span>
+        <div class="feature-title">Perfil tech</div>
+        <div class="feature-desc">Combina perfeitamente com SaaS, agências de tecnologia, apps e serviços digitais.</div>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">🔒</span>
+        <div class="feature-title">Transferência segura</div>
+        <div class="feature-desc">Transferência via Registro.br com suporte completo durante todo o processo.</div>
+      </div>
+    </div>
+
+    <div class="cta-wrap">
+      <span class="cta-label">Pronto para negociar?</span>
+
+      <a
+        class="cta-btn"
+        href="https://wa.me/5519999999999?text=Olá!%20Tenho%20interesse%20em%20adquirir%20o%20domínio%20masitech.com.br.%20Podemos%20conversar%3F"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Entrar em contato via WhatsApp"
+      >
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Falar no WhatsApp
+      </a>
+
+      <p class="cta-note">
+        Resposta rápida · Negociação direta · Transferência via Registro.br
+      </p>
+    </div>
+
+    <hr class="divider" />
+
+    <p style="text-align:center; font-size:13px; color: var(--muted); line-height: 1.7; animation: fadeUp 0.7s 0.5s ease both;">
+      Aceita proposta? Sim. Entre em contato e vamos conversar<br>sobre condições e formas de pagamento.
+    </p>
+
+  </main>
+
+  <footer>
+    © 2026 · masitech.com.br · todos os direitos reservados
+  </footer>
+
+</body>
+</html>
