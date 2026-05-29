@@ -116,7 +116,11 @@
     .domain-name::after {
       content: '';
       position: absolute;
-      bottom: -8px; left: 5%; right: 5%; height: 2px;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 6px);
+      height: 2px;
       background: linear-gradient(90deg, transparent, var(--accent), transparent);
     }
 
